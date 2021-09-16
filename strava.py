@@ -29,7 +29,7 @@ for x in range(0,int(math.ceil(tot1))):
 		print ("%f, %f - %f, %f" % (lat1, long1, lat2, long2))
 		url = 'https://www.strava.com/api/v3/segments/explore?bounds=%f%%2C%f%%2C%f%%2C%f&activity_type=running' % (lat1, long1, lat2, long2)
 		# url = 'https://lincoln.niagaraevergreen.ca/eg/opac/results?query=sort%%28titlesort%%29%%20item_type%%28a%%29;qtype=keyword;locg=103;_adv=1;page=%d;sort=titlesort;detail_record_view=1' % (x)
-		r = requests.get(url, headers={'Authorization': 'Bearer a2759badc7a4f69b092fabb9afaef4dfcbb231f6'})
+		r = requests.get(url, headers={'Authorization': 'Bearer [insert token here]'})
 		data = r.json()
 		
 		print(data)
@@ -37,7 +37,7 @@ for x in range(0,int(math.ceil(tot1))):
 			# print(segment["id"])
 			dist = segment["distance"]
 			url = 'https://www.strava.com/api/v3/segments/%d' % (segment["id"])
-			r = requests.get(url, headers={'Authorization': 'Bearer a2759badc7a4f69b092fabb9afaef4dfcbb231f6'})
+			r = requests.get(url, headers={'Authorization': 'Bearer [insert token here]'})
 			data = r.json()
 			timestr = data["xoms"]["kom"].split(":")
 			if (len(timestr) > 1):
